@@ -3,7 +3,7 @@
 [![arXiv](https://img.shields.io/badge/GaussianImage-2403.08551-b31b1b)](https://arxiv.org/abs/2403.08551)
 [![GitHub Repo stars](https://img.shields.io/github/stars/Xinjie-Q/GaussianImage.svg?style=social&label=Star&maxAge=60)](https://github.com/Xinjie-Q/GaussianImage)
 
-[[paper](https://arxiv.org/abs/2403.08551)][[project page](https://xingtongge.github.io/GaussianImage-page/)]
+[[paper](https://arxiv.org/abs/2403.08551)][[project page](https://xingtongge.github.io/GaussianImage-page/)][[code](https://github.com/Xinjie-Q/GaussianImage)]
 
 [Xinjie Zhang*](https://xinjie-q.github.io/), [Xingtong Ge*](https://github.com/XingtongGe), [Tongda Xu](https://tongdaxu.github.io/), [Dailan He](https://scholar.google.com/citations?user=f5MTTy4AAAAJ&hl=en), [Yan Wang](https://yanwang202199.github.io/), [Hongwei Qin](http://qinhongwei.com/academic/), [Guo Lu](https://guolusjtu.github.io/guoluhomepage/), [Jing Ge📧](https://cs.bit.edu.cn/szdw/jsml/fjs/gj/index.htm), [Jun Zhang📧](https://eejzhang.people.ust.hk/)
 
@@ -11,24 +11,19 @@
 
 This is the official implementation of our paper [GaussianImage](https://arxiv.org/abs/2403.08551), a groundbreaking paradigm of image representation and compression by 2D Gaussian Splatting. With compact 2D Gaussian representation and a novel rasterization method, our approach achieves high representation performance with short training duration, minimal GPU memory overhead and ultra-fast rendering speed. Furthermore, we integrate existing vector quantization technique to build an low-complexity neural image codec. Remarkably, the decoding speed of our codec reaches 2000 FPS, outpacing traditional codecs like JPEG, while also providing enhanced compression performance at lower bitrates. This establishes a significant advancement in the field of neural image codecs. More qualitative results can be found in our paper.
 
-<div align=center>
-<img src="./img/kodak_representation.png" alt="speed" width="640" />
+<div align="center">
+  <img src="./img/kodak_representation.png" alt="kodak_fitting" width="320" />
+  <img src="./img/div2k_representation.png" alt="div2k_fitting" width="320" />
 </div>
 
-<div align=center>
-<img src="./img/div2k_representation.png" alt="compression" width="640" />
+<div align="center">
+  <img src="./img/kodak_codec.png" alt="kodak_codec" width="320" />
+  <img src="./img/div2k_codec.png" alt="div2k_codec" width="320" />
 </div>
 
-<div align=center>
-<img src="./img/kodak_codec.png" alt="speed" width="640" />
-</div>
 
 <div align=center>
-<img src="./img/div2k_codec.png" alt="compression" width="640" />
-</div>
-
-<div align=center>
-<img src="./img/rd_curve.png" alt="visual" width="640" />
+<img src="./img/rd_curve.png" alt="rd" width="640" />
 </div>
 
 <div align=center>
@@ -45,9 +40,11 @@ This is the official implementation of our paper [GaussianImage](https://arxiv.o
 
 ![overview](./img/overview.png)
 
-![overview](./img/codec.png)
+<!-- ![overview](./img/codec.png) -->
 
-Implicit neural representations (INRs) recently achieved great success in image representation and compression, offering high visual quality and fast rendering speeds with 10-1000 FPS, assuming sufficient GPU resources are available. However, this requirement often hinders their use on low-end devices with limited memory. In response, we propose a groundbreaking paradigm of image representation and compression by 2D Gaussian Splatting, named GaussianImage. We first introduce 2D Gaussian to represent the image, where each Gaussian has 8 parameters including position, covariance and color. Subsequently, we unveil a novel rendering algorithm based on accumulated summation. Remarkably, our method with a minimum of 3$\times$ lower GPU memory usage and 5$\times$  faster fitting time not only rivals INRs (e.g., WIRE, I-NGP) in representation performance, but also delivers a faster rendering speed of around 2000 FPS regardless of parameter size. Furthermore, we integrate existing vector quantization technique to build an image codec. Experimental results demonstrate that our codec attains rate-distortion performance comparable to compression-based INRs such as COIN and COIN++, while facilitating decoding speeds of approximately 2000 FPS. Additionally, preliminary proof of concept shows that our codec surpasses COIN and COIN++ in performance when using partial bits-back coding. 
+
+
+Implicit neural representations (INRs) recently achieved great success in image representation and compression, offering high visual quality and fast rendering speeds with 10-1000 FPS, assuming sufficient GPU resources are available. However, this requirement often hinders their use on low-end devices with limited memory. In response, we propose a groundbreaking paradigm of image representation and compression by 2D Gaussian Splatting, named GaussianImage. We first introduce 2D Gaussian to represent the image, where each Gaussian has 8 parameters including position, covariance and color. Subsequently, we unveil a novel rendering algorithm based on accumulated summation. Remarkably, our method with a minimum of $3\times$ lower GPU memory usage and $5\times$  faster fitting time not only rivals INRs (e.g., WIRE, I-NGP) in representation performance, but also delivers a faster rendering speed of around 2000 FPS regardless of parameter size. Furthermore, we integrate existing vector quantization technique to build an image codec. Experimental results demonstrate that our codec attains rate-distortion performance comparable to compression-based INRs such as COIN and COIN++, while facilitating decoding speeds of approximately 2000 FPS. Additionally, preliminary proof of concept shows that our codec surpasses COIN and COIN++ in performance when using partial bits-back coding. 
 
 ## Quick Started
 
