@@ -1,0 +1,3 @@
+[submodule "gsplat"]
+	path = gsplat
+	url = https://github.com/XingtongGe/gsplat.git
