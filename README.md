@@ -1,4 +1,4 @@
-# GaussianImage: 2000 FPS Image Representation and Compression by 2D Gaussian Splatting
+# GaussianImage: 1000 FPS Image Representation and Compression by 2D Gaussian Splatting
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 [![arXiv](https://img.shields.io/badge/GaussianImage-2403.08551-b31b1b)](https://arxiv.org/abs/2403.08551)
 [![GitHub Repo stars](https://img.shields.io/github/stars/Xinjie-Q/GaussianImage.svg?style=social&label=Star&maxAge=60)](https://github.com/Xinjie-Q/GaussianImage)
@@ -103,7 +103,7 @@ If you find our GaussianImage paradigm useful or relevant to your research, plea
 
 ```
 @inproceedings{zhang2024gaussianimage,
-  title={GaussianImage: 2000 FPS Image Representation and Compression by 2D Gaussian Splatting},
+  title={GaussianImage: 1000 FPS Image Representation and Compression by 2D Gaussian Splatting},
   author={Zhang, Xinjie and Ge, Xingtong and Xu, Tongda and He, Dailan and Wang, Yan and Qin, Hongwei and Lu, Guo and Geng, Jing and Zhang, Jun},
   booktitle={European Conference on Computer Vision},
   year={2024}
