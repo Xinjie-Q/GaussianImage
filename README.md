@@ -9,7 +9,7 @@
 
 (* denotes equal contribution, 📧 denotes corresponding author.)
 
-This is the official implementation of our paper [GaussianImage](https://arxiv.org/abs/2403.08551), a groundbreaking paradigm of image representation and compression by 2D Gaussian Splatting. With compact 2D Gaussian representation and a novel rasterization method, our approach achieves high representation performance with short training duration, minimal GPU memory overhead and ultra-fast rendering speed. Furthermore, we integrate existing vector quantization technique to build an low-complexity neural image codec. Remarkably, the decoding speed of our codec reaches 2000 FPS, outpacing traditional codecs like JPEG, while also providing enhanced compression performance at lower bitrates. This establishes a significant advancement in the field of neural image codecs. More qualitative results can be found in our paper.
+This is the official implementation of our paper [GaussianImage](https://arxiv.org/abs/2403.08551), a groundbreaking paradigm of image representation and compression by 2D Gaussian Splatting. With compact 2D Gaussian representation and a novel rasterization method, our approach achieves high representation performance with short training duration, minimal GPU memory overhead and ultra-fast rendering speed. Furthermore, we integrate existing vector quantization technique to build an low-complexity neural image codec. Remarkably, the decoding speed of our codec reaches around 2000 FPS, outpacing traditional codecs like JPEG, while also providing enhanced compression performance at lower bitrates. This establishes a significant advancement in the field of neural image codecs. More qualitative results can be found in our paper.
 
 <div align="center">
   <img src="./img/kodak_representation.png" alt="kodak_fitting" width="320" />
@@ -27,7 +27,7 @@ This is the official implementation of our paper [GaussianImage](https://arxiv.o
 
 ## News
 
-* **2024/7/8**: 🔥 We release our Python and CUDA code for GaussianImage presented in our paper. Have a try! Compared to the first version, we further improved the decoding speed of the GaussianImage codec to 2000 FPS by removing the entropy coding operation, while only increasing the bpp overhead very slightly.
+* **2024/7/8**: 🔥 We release our Python and CUDA code for GaussianImage presented in our paper. Have a try! Compared to the first version, we further improved the decoding speed of the GaussianImage codec to around 2000 FPS by removing the entropy coding operation, while only increasing the bpp overhead very slightly.
 
 * **2024/7/1**: 🌟 Our paper has been accepted by ECCV 2024! 🎉 Cheers!
 
