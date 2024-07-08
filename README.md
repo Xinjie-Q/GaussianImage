@@ -102,12 +102,10 @@ We thank [vector-quantize-pytorch](https://github.com/lucidrains/vector-quantize
 If you find our GaussianImage paradigm useful or relevant to your research, please kindly cite our paper:
 
 ```
-
 @inproceedings{zhang2024gaussianimage,
   title={GaussianImage: 2000 FPS Image Representation and Compression by 2D Gaussian Splatting},
   author={Zhang, Xinjie and Ge, Xingtong and Xu, Tongda and He, Dailan and Wang, Yan and Qin, Hongwei and Lu, Guo and Geng, Jing and Zhang, Jun},
   booktitle={European Conference on Computer Vision},
   year={2024}
 }
-
 ```
