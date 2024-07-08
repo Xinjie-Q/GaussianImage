@@ -21,11 +21,6 @@ This is the official implementation of our paper [GaussianImage](https://arxiv.o
   <img src="./img/div2k_codec.png" alt="div2k_codec" width="320" />
 </div>
 
-
-<div align=center>
-<img src="./img/rd_curve.png" alt="rd" width="640" />
-</div>
-
 <div align=center>
 <img src="./img/visual.png" alt="visual" width="640" />
 </div>
@@ -40,10 +35,6 @@ This is the official implementation of our paper [GaussianImage](https://arxiv.o
 
 ![overview](./img/overview.png)
 
-<!-- ![overview](./img/codec.png) -->
-
-
-
 Implicit neural representations (INRs) recently achieved great success in image representation and compression, offering high visual quality and fast rendering speeds with 10-1000 FPS, assuming sufficient GPU resources are available. However, this requirement often hinders their use on low-end devices with limited memory. In response, we propose a groundbreaking paradigm of image representation and compression by 2D Gaussian Splatting, named GaussianImage. We first introduce 2D Gaussian to represent the image, where each Gaussian has 8 parameters including position, covariance and color. Subsequently, we unveil a novel rendering algorithm based on accumulated summation. Remarkably, our method with a minimum of $3\times$ lower GPU memory usage and $5\times$  faster fitting time not only rivals INRs (e.g., WIRE, I-NGP) in representation performance, but also delivers a faster rendering speed of around 2000 FPS regardless of parameter size. Furthermore, we integrate existing vector quantization technique to build an image codec. Experimental results demonstrate that our codec attains rate-distortion performance comparable to compression-based INRs such as COIN and COIN++, while facilitating decoding speeds of approximately 2000 FPS. Additionally, preliminary proof of concept shows that our codec surpasses COIN and COIN++ in performance when using partial bits-back coding. 
 
 ## Quick Started
@@ -53,6 +44,9 @@ After cloning the repository, you can follow these steps to train GaussianImage 
 ### Requirements
 
 ```bash
+cd gsplat
+pip install .[dev]
+cd ../
 pip install -r requirements.txt
 ```
 
