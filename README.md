@@ -5,7 +5,7 @@
 
 [[paper](https://arxiv.org/abs/2403.08551)][[project page](https://xingtongge.github.io/GaussianImage-page/)][[code](https://github.com/Xinjie-Q/GaussianImage)]
 
-[Xinjie Zhang*](https://xinjie-q.github.io/), [Xingtong Ge*](https://xingtongge.github.io/), [Tongda Xu](https://tongdaxu.github.io/), [Dailan He](https://scholar.google.com/citations?user=f5MTTy4AAAAJ&hl=en), [Yan Wang](https://yanwang202199.github.io/), [Hongwei Qin](http://qinhongwei.com/academic/), [Guo Lu](https://guolusjtu.github.io/guoluhomepage/), [Jing Ge📧](https://cs.bit.edu.cn/szdw/jsml/fjs/gj/index.htm), [Jun Zhang📧](https://eejzhang.people.ust.hk/)
+[Xinjie Zhang*](https://xinjie-q.github.io/), [Xingtong Ge*](https://xingtongge.github.io/), [Tongda Xu](https://tongdaxu.github.io/), [Dailan He](https://scholar.google.com/citations?user=f5MTTy4AAAAJ&hl=en), [Yan Wang](https://yanwang202199.github.io/), [Hongwei Qin](http://qinhongwei.com/academic/), [Guo Lu](https://guolusjtu.github.io/guoluhomepage/), [Jing Geng📧](https://cs.bit.edu.cn/szdw/jsml/fjs/gj/index.htm), [Jun Zhang📧](https://eejzhang.people.ust.hk/)
 
 (* denotes equal contribution, 📧 denotes corresponding author.)
 
