@@ -93,7 +93,7 @@ sh ./scripts/gaussianimage_rs/div2k_lrx2_comp.sh
 
 ## Acknowledgments
 
-Our code was developed based on [gsplat](https://github.com/nerfstudio-project/gsplat). This is a concise and easily extensible Gaussian splatting library.
+Our code was developed based on [gsplat](https://github.com/nerfstudio-project/gsplat). This is a concise and easily extensible Gaussian Splatting library.
 
 We thank [vector-quantize-pytorch](https://github.com/lucidrains/vector-quantize-pytorch) for providing the framework to implement residual vector quantization.
 
