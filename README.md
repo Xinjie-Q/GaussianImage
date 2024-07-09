@@ -39,6 +39,18 @@ Implicit neural representations (INRs) recently achieved great success in image 
 
 ## Quick Started
 
+### Cloning the Repository
+
+The repository contains submodules, thus please check it out with 
+```shell
+# SSH
+git clone git@github.com:Xinjie-Q/GaussianImage.git --recursive
+```
+or
+```shell
+# HTTPS
+git clone https://github.com/Xinjie-Q/GaussianImage.git --recursive
+```
 After cloning the repository, you can follow these steps to train GaussianImage models under different tasks. 
 
 ### Requirements
