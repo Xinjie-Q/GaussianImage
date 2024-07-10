@@ -82,13 +82,13 @@ Before training, you need to download the [kodak](https://r0k.us/graphics/kodak/
 #### Representation
 
 ```bash
-sh ./scripts/gaussianimage_cholesky/kodak.sh
-sh ./scripts/gaussianimage_rs/kodak.sh
-sh ./scripts/3dgs/kodak.sh
+sh ./scripts/gaussianimage_cholesky/kodak.sh /path/to/your/dataset
+sh ./scripts/gaussianimage_rs/kodak.sh /path/to/your/dataset
+sh ./scripts/3dgs/kodak.sh /path/to/your/dataset
 
-sh ./scripts/gaussianimage_cholesky/div2k.sh
-sh ./scripts/gaussianimage_rs/div2k.sh
-sh ./scripts/3dgs/div2k.sh
+sh ./scripts/gaussianimage_cholesky/div2k.sh /path/to/your/dataset
+sh ./scripts/gaussianimage_rs/div2k.sh /path/to/your/dataset
+sh ./scripts/3dgs/div2k.sh /path/to/your/dataset
 ```
 
 #### Compression
@@ -96,11 +96,11 @@ sh ./scripts/3dgs/div2k.sh
 After overfitting the image, we load the checkpoints from image representation and apply quantization-aware training technique to obtain the image compression results of GaussianImage models.
 
 ```bash
-sh ./scripts/gaussianimage_cholesky/kodak_comp.sh
-sh ./scripts/gaussianimage_rs/kodak_comp.sh
+sh ./scripts/gaussianimage_cholesky/kodak_comp.sh /path/to/your/dataset
+sh ./scripts/gaussianimage_rs/kodak_comp.sh /path/to/your/dataset
 
-sh ./scripts/gaussianimage_cholesky/div2k_comp.sh
-sh ./scripts/gaussianimage_rs/div2k_comp.sh
+sh ./scripts/gaussianimage_cholesky/div2k_comp.sh /path/to/your/dataset
+sh ./scripts/gaussianimage_rs/div2k_comp.sh /path/to/your/dataset
 ```
 
 ## Acknowledgments
