@@ -101,14 +101,13 @@ class GaussianImage_RS(nn.Module):
         scaling = torch.abs(scaling + self.bound)
         rotation, l_vqr, r_bit = self.rotation_quantizer(self.get_rotation)
         colors, l_vqc, c_bit = self.features_dc_quantizer(self.get_features)
-        l_vqo, o_bit = 0, 0
         self.xys, depths, self.radii, conics, num_tiles_hit = project_gaussians_2d_scale_rot(means, scaling, rotation, self.H, self.W, self.tile_bounds)
         out_img = rasterize_gaussians_sum(self.xys, depths, self.radii, conics, num_tiles_hit,
                 colors, self._opacity, self.H, self.W, self.BLOCK_H, self.BLOCK_W, background=self.background, return_alpha=False)
         out_img = torch.clamp(out_img, 0, 1)
         out_img = out_img.view(-1, self.H, self.W, 3).permute(0, 3, 1, 2).contiguous()
-        vq_loss = l_vqm + l_vqs + l_vqr + l_vqc + l_vqo
-        return {"render": out_img, "vq_loss": vq_loss, "unit_bit":[m_bit, s_bit, r_bit, c_bit, o_bit]}
+        vq_loss = l_vqm + l_vqs + l_vqr + l_vqc 
+        return {"render": out_img, "vq_loss": vq_loss, "unit_bit":[m_bit, s_bit, r_bit, c_bit]}
 
     def train_iter_quantize(self, gt_image):
         render_pkg = self.forward_quantize()

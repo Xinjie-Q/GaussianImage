@@ -30,11 +30,12 @@ class SimpleTrainer2d:
 
         self.num_points = num_points
         image_path = Path(image_path)
-        image_name = image_path.stem
+        self.image_name = image_path.stem
         BLOCK_H, BLOCK_W = 16, 16
         self.H, self.W = self.gt_image.shape[2], self.gt_image.shape[3]
         self.iterations = iterations
-        self.log_dir = Path(f"./checkpoints/{args.data_name}/{model_name}_{args.iterations}_{num_points}/{image_name}")
+        self.save_imgs = args.save_imgs
+        self.log_dir = Path(f"./checkpoints/{args.data_name}/{model_name}_{args.iterations}_{num_points}/{self.image_name}")
         
         if model_name == "GaussianImage_Cholesky":
             from gaussianimage_cholesky import GaussianImage_Cholesky
@@ -99,6 +100,11 @@ class SimpleTrainer2d:
         psnr = 10 * math.log10(1.0 / mse_loss.item())
         ms_ssim_value = ms_ssim(out["render"].float(), self.gt_image.float(), data_range=1, size_average=True).item()
         self.logwriter.write("Test PSNR:{:.4f}, MS_SSIM:{:.6f}".format(psnr, ms_ssim_value))
+        if self.save_imgs:
+            transform = transforms.ToPILImage()
+            img = transform(out["render"].float().squeeze(0))
+            name = self.image_name + "_fitting.png" 
+            img.save(str(self.log_dir / name))
         return psnr, ms_ssim_value
 
 def image_path_to_tensor(image_path: Path):

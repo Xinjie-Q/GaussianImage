@@ -30,11 +30,11 @@ class SimpleTrainer2d:
         self.gt_image = image_path_to_tensor(image_path).to(self.device) #gt_image.to(device=self.device)
         self.num_points = num_points
         image_path = Path(image_path)
-        image_name = image_path.stem
+        self.image_name = image_path.stem
         BLOCK_H, BLOCK_W = 16, 16
         self.H, self.W = self.gt_image.shape[2], self.gt_image.shape[3]
         self.iterations = iterations
-        self.log_dir = Path(f"./checkpoints_quant/{args.data_name}/{model_name}_{args.iterations}_{num_points}/{image_name}")
+        self.log_dir = Path(f"./checkpoints_quant/{args.data_name}/{model_name}_{args.iterations}_{num_points}/{self.image_name}")
         self.save_imgs = args.save_imgs
 
         if model_name == "GaussianImage_Cholesky":
@@ -105,26 +105,17 @@ class SimpleTrainer2d:
         mse_loss = F.mse_loss(out_img, self.gt_image)
         psnr = 10 * math.log10(1.0 / mse_loss.item())
         ms_ssim_value = ms_ssim(out["render"].float(), self.gt_image.float(), data_range=1, size_average=True).item()
-        m_bit, s_bit, r_bit, c_bit, o_bit = out["unit_bit"]
-        if o_bit == 0:
-            avg_bit = (m_bit + s_bit + r_bit + c_bit + o_bit)/8/self.num_points
-        else:
-            avg_bit = (m_bit + s_bit + r_bit + c_bit + o_bit)/9/self.num_points
-        bpp = (m_bit + s_bit + r_bit + c_bit + o_bit)/self.H/self.W
-        if r_bit == 0:
-            m_bit, s_bit, r_bit, c_bit, o_bit = m_bit/self.num_points/2, s_bit/self.num_points/3, r_bit/self.num_points, c_bit/self.num_points/3, o_bit/self.num_points
-        else:
-            m_bit, s_bit, r_bit, c_bit, o_bit = m_bit/self.num_points/2, s_bit/self.num_points/2, r_bit/self.num_points, c_bit/self.num_points/3, o_bit/self.num_points
-        
+        m_bit, s_bit, r_bit, c_bit = out["unit_bit"]
+        bpp = (m_bit + s_bit + r_bit + c_bit)/self.H/self.W
+
         strings = "Best Test" if best else "Test"
-        self.logwriter.write("{} m_bit:{:.4f}, s_bit:{:.4f}, r_bit:{:.4f}, c_bit:{:.4f}, o_bit:{:.4f}, avg_bit:{:.4f}".format(strings, m_bit, \
-            s_bit, r_bit, c_bit, o_bit, avg_bit))
         self.logwriter.write("{} PSNR:{:.4f}, MS_SSIM:{:.6f}, bpp:{:.4f}".format(strings, psnr, 
             ms_ssim_value, bpp))
         if self.save_imgs:
             transform = transforms.ToPILImage()
             img = transform(out_img.squeeze(0))
-            name = "recon_best.png" if best else "recon.png" 
+            name = "_codec_best.png" if best else "_codec.png" 
+            name = self.image_name + name
             img.save(str(self.log_dir / name))
         return psnr, ms_ssim_value, bpp
 
