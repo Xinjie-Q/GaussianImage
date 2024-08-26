@@ -159,7 +159,7 @@ class GaussianImage_Cholesky(nn.Module):
         cholesky_bits, feature_dc_bits = 0, 0
         cholesky_bits += self.cholesky_quantizer.scale.numel()*torch.finfo(self.cholesky_quantizer.scale.dtype).bits
         cholesky_bits += self.cholesky_quantizer.beta.numel()*torch.finfo(self.cholesky_quantizer.beta.dtype).bits
-        cholesky_bits += len(quant_cholesky_elements) * 6
+        cholesky_bits += quant_cholesky_elements.size * 6
         feature_dc_bits += codebook_bits
         feature_dc_bits += feature_dc_index.size * max_bit
 
